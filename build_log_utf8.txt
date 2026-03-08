@@ -1,0 +1,8 @@
+﻿Creating an optimized production build...
+Failed to compile.
+
+[eslint] 
+src\index.js
+Syntax error: [BABEL] E:\MCA\projects\Majer-BJ\ElectroMart-E-com-AdminDashBoard\src\index.js: Requires Babel "^7.16.0", but was loaded with "7.14.0". If you are sure you have a compatible version of @babel/core, it is likely that something in your build process is loading the wrong version. Inspect the stack trace of this error to look for the first entry that doesn't mention "@babel/core" or "babel-core" to see what is calling Babel. (While processing: "E:\\MCA\\projects\\Majer-BJ\\ElectroMart-E-com-AdminDashBoard\\node_modules\\babel-preset-react-app\\prod.js$0$2") (0:undefined)
+
+
