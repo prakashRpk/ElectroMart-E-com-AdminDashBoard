@@ -472,9 +472,16 @@ export const uploadProductImage = async (productId, file) => {
     });
 
     if (!res.ok) {
-      const errorText = await res.text();
-      console.error("Upload failed response:", errorText);
-      throw new Error(`Image upload failed: ${res.status} ${res.statusText}`);
+      let errorMessage = `Image upload failed: ${res.status} ${res.statusText}`;
+      try {
+        const errorData = await res.json();
+        errorMessage = errorData.message || errorMessage;
+      } catch {
+        const errorText = await res.text().catch(() => "");
+        if (errorText) errorMessage = errorText;
+      }
+      console.error("Upload failed:", errorMessage);
+      throw new Error(errorMessage);
     }
     
     return await res.json();
